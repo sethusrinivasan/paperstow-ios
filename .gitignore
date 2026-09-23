@@ -1,0 +1,44 @@
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+*.xccheckout
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+xcuserdata/
+*.xcworkspace/xcuserdata/
+*.playground
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Packages/
+Package.resolved
+
+# CocoaPods / Carthage (not used; ignore if they appear)
+Pods/
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Signing — never commit
+*.p12
+*.cer
+*.certSigningRequest
+*.mobileprovision
+AuthKey_*.p8
+Secrets.xcconfig
+*.keystore
+
+# OS / editor
+.DS_Store
+.idea/
+*.swp
+*~
