@@ -2,31 +2,39 @@
 
 Native Swift app. Same product purpose as Android Paperstow 1.1. Separate from `document-manager`.
 
-## Phase 0 — this repo
+## Done on Linux (this environment)
 
-GitHub repository, README, license, gitignore. No Xcode target yet (needs a Mac).
+Phase 0 plus everything that does not need Xcode:
 
-## Phase 1 — vault
+- GitHub repo, license, gitignore
+- `PaperstowCore` Swift package: models, limits, format detect, AES-GCM, backup manifest, search, auto-tags, trail math, GPX
+- Unit tests for those rules
+- CI: `swift test` on Ubuntu
+- Docs: architecture, backup format, App Store, privacy
+- Store brand copies under `docs/brand/`
 
-EULA → unlock → home → import file/scan → encrypt → tag → preview → search → share → reset. Sample trip for screenshots.
+`swift test` is the check this environment (and GitHub Actions) can run.
 
-Stack: SwiftUI, LocalAuthentication, CryptoKit + Keychain, Vision + PDFKit + VisionKit, SQLite (GRDB or SwiftData). iOS 17 unless we need older devices.
+## Next step (needs a Mac)
 
-## Phase 2 — archive
+**Create the Xcode iOS app target and wire it to `PaperstowCore`.**
 
-ZIP to Files, password optional, restore verifies the archive before swapping live data. Later we can define a shared `manifest.json` if Android ↔ iPhone restore matters.
+On a Mac with Xcode 16+:
 
-## Phase 3 — polish
+1. `File → New → Project → App` (SwiftUI, iOS 17, bundle ID `com.app.paperstow`).
+2. Add the local Swift package (`PaperstowCore`) to the app target.
+3. Build the first screens only: EULA → Face ID / passcode unlock → empty Home.
+4. Then import a file, encrypt with `FileEncryptor` + Keychain, list it, preview, search with `SearchMatch`.
+5. Simulator screenshots for App Store. Do not start My Trail in 1.0.
 
-Notes, checklists, folder import, review/classify, tips, About (version + bundle ID).
+That work cannot be done on this Linux machine. There is no iOS SDK here.
 
-## Phase 4 — My Trail (optional, after 1.0)
+## After the Xcode shell
 
-Rebuild with Core Location and a user Start/Stop. When In Use only. No silent Always-on tracking.
-
-## Phase 5 — App Store
-
-TestFlight, privacy nutrition labels, first `1.0.0`.
+- **Phase 2** — ZIP archive to Files (optional password), restore using `BackupManifest.looksComplete`
+- **Phase 3** — notes, checklists, folder import, tips, About
+- **Phase 4** — My Trail only if we want it; Core Location, When In Use, user Start/Stop
+- **Phase 5** — TestFlight and App Store (see `docs/APP_STORE.md`)
 
 ## What we will not do
 

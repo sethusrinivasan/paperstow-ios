@@ -26,9 +26,23 @@ My Trail (optional unique places for 24 hours) is **not** in the first App Store
 
 ## Status
 
-Phase 0: repository only. The Xcode app target will be added on a Mac. This machine cannot compile an iOS app.
+`PaperstowCore` (Swift package) is in this repo and tested with `swift test` / GitHub Actions. It holds the product rules: limits, format detect, AES-GCM, backup manifest, search, GPX.
 
-See [docs/PLAN.md](docs/PLAN.md) for the build order.
+The **Xcode iOS app** is the next step and needs a Mac. See [docs/PLAN.md](docs/PLAN.md).
+
+```bash
+swift test
+```
+
+## Docs
+
+| Doc | What it is |
+|-----|------------|
+| [docs/PLAN.md](docs/PLAN.md) | Build order and the next Mac step |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Layers |
+| [docs/BACKUP_FORMAT.md](docs/BACKUP_FORMAT.md) | ZIP `schemaVersion` 2 |
+| [docs/APP_STORE.md](docs/APP_STORE.md) | Listing and privacy labels |
+| [docs/PRIVACY.md](docs/PRIVACY.md) | What stays on the phone |
 
 ## License
 
