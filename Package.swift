@@ -11,7 +11,7 @@ let package = Package(
         .library(name: "PaperstowCore", targets: ["PaperstowCore"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-crypto.git", from: "3.10.0"),
+        .package(url: "https://github.com/apple/swift-crypto.git", from: "5.0.0"),
     ],
     targets: [
         .target(
