@@ -13,7 +13,7 @@ Phase 0 plus everything that does not need Xcode:
 - Docs: architecture, backup format, App Store, privacy
 - Store brand copies under `docs/brand/`
 
-`swift test` is the check this environment (and GitHub Actions) can run.
+`swift test` is the check this environment (and GitHub Actions) can run. CI uses the official `swift:6.0` container on Ubuntu, not `setup-swift@v2`.
 
 ## Next step (needs a Mac)
 

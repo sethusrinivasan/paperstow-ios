@@ -26,7 +26,7 @@ My Trail (optional unique places for 24 hours) is **not** in the first App Store
 
 ## Status
 
-`PaperstowCore` (Swift package) is in this repo and tested with `swift test` / GitHub Actions. It holds the product rules: limits, format detect, AES-GCM, backup manifest, search, GPX.
+`PaperstowCore` (Swift package) is in this repo and tested with `swift test`. GitHub Actions runs that in the official `swift:6.0` container.
 
 The **Xcode iOS app** is the next step and needs a Mac. See [docs/PLAN.md](docs/PLAN.md).
 
