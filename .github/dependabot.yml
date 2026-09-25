@@ -11,3 +11,7 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    # AES-GCM on 3.x is enough for PaperstowCore. Crypto 5 is a major API bump.
+    ignore:
+      - dependency-name: "github.com/apple/swift-crypto"
+        update-types: ["version-update:semver-major"]
